@@ -1340,6 +1340,9 @@ namespace Xamarin.Bundler {
 
 					args.Append (StringUtils.Quote (lib)).Append (' ');
 
+					var libsystem_native_path = Path.Combine (libdir, "libmono-system-native.a");
+					args.Append (StringUtils.Quote (libsystem_native_path)).Append (' ');
+
 					if (profiling.HasValue && profiling.Value) {
 						args.Append (StringUtils.Quote (Path.Combine (libdir, "libmono-profiler-log.a"))).Append (' ');
 						args.Append ("-u _mono_profiler_init_log -lz ");
